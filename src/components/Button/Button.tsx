@@ -10,7 +10,7 @@ interface Props {
   width: string;
   maxWidth: string;
   text: string;
-  onClick: () => never;
+  onClick: () => void;
 }
 
 const Button: React.FC<Props> = ({

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+import './styles/sass/main.scss'
 
 // Components
 import { Wrapper } from "./App.styles";
@@ -35,12 +36,10 @@ const App = () => {
 
 
   return (
-  <Wrapper>
+  <Wrapper className="container">
     <div className="grid">
       {data?.map(item => (
-        <div className="grid-item" key={item.id}>
-          <Item item={item} handleAddToCart={handleAddToCart} />
-        </div>
+          <Item key={item.id} item={item} handleAddToCart={handleAddToCart} />
       ))}
     </div>
   </Wrapper>
