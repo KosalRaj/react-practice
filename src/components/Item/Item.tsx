@@ -1,8 +1,12 @@
-import Button from "../Button/Button";
+import Button from "../Button";
 
 import { CartItemType } from '../../App';
 
-import { Wrapper } from "./Item.styles";
+// import { Wrapper } from "./Item.styles";
+
+import styled from "styled-components";
+
+import { Wrapper } from './Item.styles';
 
 type Props = {
   item: CartItemType;
@@ -14,11 +18,11 @@ const Item: React.FC<Props> = ({ item, handleAddToCart }) => (
     <img src={item.image} alt={item.title} />
     <div>
       <h3>{item.title}</h3>
-      <p>{item.description}</p>
-      <h3>${item.price}</h3>
+      <h4>${item.price}</h4>
     </div>
     <Button onClick={() => handleAddToCart(item)}>Add to cart</Button>
   </Wrapper>
 )
 
 export default Item;
+  
