@@ -6,12 +6,18 @@ export const Wrapper = styled.div`
   gap: 1em;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 20px hsla(0, 0%, 30%, 30%);
+  box-shadow:
+    0px 1.8px 3.6px rgba(0, 0, 0, 0.024),
+    0px 5px 10px rgba(0, 0, 0, 0.035),
+    0px 12.1px 24.1px rgba(0, 0, 0, 0.046),
+    0px 40px 80px rgba(0, 0, 0, 0.07)
+  ;
   padding: 1em;
   border-radius: 0.5em;
+  background-color: hsl(0, 0%, 100%);
 
   & > img {
-    max-height: 250px;
+    height: 250px;
     object-fit: contain;
   }
 

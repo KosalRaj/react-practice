@@ -8,4 +8,14 @@ export const Wrapper = styled.button`
   border: 0;
   border-radius: 0.25em;
   font-weight: 500;
+  cursor: pointer;
+  border: 1px solid hsl(236, 52%, 39%);
+
+  &:hover {
+    background-color: hsl(236,52%, 44%);
+  }
+
+  &:active {
+    transform: scale(1.01);
+  }
 `;

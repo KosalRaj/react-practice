@@ -24,4 +24,8 @@ export const Wrapper = styled.div`
     text-decoration: none;
     color: hsl(0, 0%, 0%);
   }
+
+  & .cart {
+    color: hsl(0, 0%, 0%);
+  }
 `
