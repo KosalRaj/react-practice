@@ -9,6 +9,8 @@ import Item from "./components/Item";
 import Drawer from './components/Drawer';
 import Navbar from './components/Navbar';
 import Cart from './components/Cart'
+import NavActions from "./components/NavActions";
+import Badge from './components/Badge'
 // Types
 export type CartItemType = {
   id: number;
@@ -38,7 +40,16 @@ const App = () => {
       // !. Is Item already in cart?
       const isItemInCart = prev.find(item => item.id === clickedItem.id);
 
+      if (isItemInCart){
+        return prev.map(item => (
+          item.id === clickedItem.id 
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        ))
+      }
       
+      // New item added
+      return [...prev, {...clickedItem, amount: 1}]
     })
   };
 
@@ -50,7 +61,11 @@ const App = () => {
 
   return (
     <MainWrapper>
-      <Navbar isCartOpen={isCartOpen} openDrawer={setIsCartOpen} />
+      <Navbar>
+        <NavActions isCartOpen={isCartOpen} openDrawer={setIsCartOpen} >
+          <Badge badgeContent={getTotalItems(cartItems)}/>
+        </NavActions>
+      </Navbar>
       <Wrapper>
         {isCartOpen && <Drawer closeDrawer={setIsCartOpen}>
           <Cart

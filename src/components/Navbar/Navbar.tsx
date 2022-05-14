@@ -1,19 +1,16 @@
+import { Children } from 'react';
 import { Wrapper } from './Navbar.styles';
-import { IoCartOutline } from 'react-icons/io5'
 
 type Props = {
-  openDrawer:(state: boolean) => void;
-  isCartOpen: boolean;
+  children?: React.ReactNode;
 }
 
-const Navbar: React.FC<Props> = ({ isCartOpen, openDrawer }) => {
+const Navbar: React.FC<Props> = ({ children }) => {
   return (
     <Wrapper>
       <div>
         <a className='logo' href="/">React-Cart</a>
-        <a className='cart' href='#' onClick={() => openDrawer(!isCartOpen)}>
-          <IoCartOutline size={"2em"} />
-        </a>
+        {children}
       </div>
     </Wrapper>
   )
