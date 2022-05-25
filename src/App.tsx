@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import './styles/sass/main.scss'
+import { initializeApp } from 'firebase/app';
+import { config } from './config/config'
+
+initializeApp(config.firebaseConfig);
 
 // Components
 import { Wrapper, MainWrapper } from "./App.styles";

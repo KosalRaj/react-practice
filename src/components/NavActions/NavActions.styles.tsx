@@ -12,3 +12,9 @@ export const Wrapper = styled.div`
     display: block;
   }
 `;
+
+export const OuterWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`;
